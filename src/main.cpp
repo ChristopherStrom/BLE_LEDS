@@ -7,6 +7,8 @@
 #define SERVICE_UUID "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
 #define CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a8"
 
+#define BLE_NAME "Beacon"
+
 #define NUM_LEDS 24
 #define DATA_PIN 17 // led data
 #define LED_PIN 2   // power pin
@@ -72,7 +74,7 @@ void setup()
   setupLEDs();
   setupIO();
 
-  BLEDevice::init("Beacon");
+  BLEDevice::init(BLE_NAME);
   BLEServer *pServer = BLEDevice::createServer();
 
   BLEService *pService = pServer->createService(SERVICE_UUID);
